@@ -12,10 +12,12 @@ Following sensors are read throug modbus:
  - BT2 - heating supply
  - BT3 - heating return
  - Degree minutes 
- - BT6 - Hot water
+ - BT6 - Hot water load
+ - BT7 - Hot water top
  - BT2 - calculated supply
  - Heating pump % 
  - Source pump %
  - Priority
  - RMU S40 temperature
+ - Compressor frequency
  - Energy usage
