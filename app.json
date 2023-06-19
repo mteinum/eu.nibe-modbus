@@ -62,7 +62,8 @@
         "measure_temperature.outside",
         "measure_temperature.outside_avg",
         "measure_string.priority",
-        "measure_temperature.hot_water",
+        "measure_temperature.hot_water_top",
+        "measure_temperature.hot_water_load",
         "measure_temperature.heating_supply",
         "measure_temperature.heating_return",
         "measure_temperature.source_in",
@@ -71,6 +72,7 @@
         "measure_percentage.source_pump",
         "measure_temperature.degree_minutes",
         "measure_temperature.calculated_supply",
+        "measure_string.compressor_frequency",
         "measure_power"
       ],
       "capabilitiesOptions": {
@@ -116,10 +118,16 @@
             "nl": "Graadminuten"
           }
         },
-        "measure_temperature.hot_water": {
+        "measure_temperature.hot_water_load": {
           "title": {
-            "en": "Hot water",
-            "nl": "Heet water"
+            "en": "Hot water load",
+            "nl": "Heet water productie"
+          }
+        },
+        "measure_temperature.hot_water_top": {
+          "title": {
+            "en": "Hot water top",
+            "nl": "Heet water top"
           }
         },
         "measure_temperature.calculated_supply": {
@@ -144,6 +152,12 @@
           "title": {
             "en": "Priority",
             "nl": "Prioriteit"
+          }
+        },
+        "measure_string.compressor_frequency": {
+          "title": {
+            "en": "Compressor frequency",
+            "nl": "Compressor frequentie"
           }
         }
       },
