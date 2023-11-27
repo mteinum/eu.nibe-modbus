@@ -78,22 +78,22 @@ class s11556pcDevice extends Device {
         Promise.all([
 
             // Read all modbus register we want
-            client.readInputRegisters(1, 1),      // BT1 - outside temperature
-            client.readInputRegisters(37, 1),     // BT1 - Average outside temperature
-            client.readInputRegisters(10, 1),     // BT10 - ground source medium IN
-            client.readInputRegisters(11, 1),     // BT11 - ground source medium OUT
-            client.readInputRegisters(5, 1),      // BT2 - heating supply
-            client.readInputRegisters(7, 1),      // BT3 - heating return
-            client.readHoldingRegisters(18, 1),   // Degree minutes ==> Holding register
-            client.readInputRegisters(8, 1),      // BT7 - Hot water top
-            client.readInputRegisters(9, 1),      // BT6 - Hot water load
-            client.readInputRegisters(1017, 1),   // BT2 - calculated supply
-            client.readInputRegisters(1102, 1),   // Heating pump % 
-            client.readInputRegisters(1104, 1),   // Source pump %
+            client.readInputRegisters(1, 1),      // BT1 - outside temperature (C)
+            client.readInputRegisters(37, 1),     // BT1 - Average outside temperature (C)
+            client.readInputRegisters(10, 1),     // BT10 - ground source medium IN (C)
+            client.readInputRegisters(11, 1),     // BT11 - ground source medium OUT (C)
+            client.readInputRegisters(5, 1),      // BT2 - heating supply (C)
+            client.readInputRegisters(7, 1),      // BT3 - heating return (C)
+            client.readHoldingRegisters(18, 1),   // Degree minutes ==> Holding register (DM)
+            client.readInputRegisters(8, 1),      // BT7 - Hot water top (C)
+            client.readInputRegisters(9, 1),      // BT6 - Hot water load (C)
+            client.readInputRegisters(1017, 1),   // BT2 - calculated supply (C)
+            client.readInputRegisters(1102, 1),   // Heating pump (%)
+            client.readInputRegisters(1104, 1),   // Source pump (%)
             client.readInputRegisters(1028, 1),   // Priority
-            client.readInputRegisters(116, 1),    // RMU S40 temperature
-            client.readInputRegisters(1046, 1),   // Compressor frequency
-            client.readInputRegisters(2166, 1)    // Energy usage
+            client.readInputRegisters(116, 1),    // RMU S40 temperature (C)
+            client.readInputRegisters(1046, 1),   // Compressor frequency (10, Hz)
+            client.readInputRegisters(2166, 1)    // Energy usage (Ws)
 
         ]).then((results) => {
     
@@ -154,6 +154,7 @@ class s11556pcDevice extends Device {
             }
 
             // Set capabilities values
+            // https://apps-sdk-v3.developer.homey.app/tutorial-device-capabilities.html
             this.setCapabilityValue('measure_temperature.outside', temperature_outside);
             this.setCapabilityValue('measure_temperature.outside_avg', temperature_outside_average);
             this.setCapabilityValue('measure_temperature.source_in', temperature_source_in);
