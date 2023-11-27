@@ -167,7 +167,7 @@ class s11556pcDevice extends Device {
             this.setCapabilityValue('measure_percentage.heating_pump', heating_pump);
             this.setCapabilityValue('measure_percentage.source_pump', source_pump);
             this.setCapabilityValue('measure_string.priority', priority);
-            this.setCapabilityValue('measure_string.compressor_frequency', compressor_frequency);
+            this.setCapabilityValue('measure_string.compressor_frequency', compressor_frequency.toString());
             this.setCapabilityValue('measure_power', energy_usage);
 
             // this.log('All values set')
